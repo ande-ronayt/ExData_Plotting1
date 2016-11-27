@@ -7,7 +7,7 @@ plot4 <- function(){
   datafile <- "household_power_consumption.txt"
   if (!file.exists(datafile)){
     ##unzip:
-    unzip ("household_power_consumption.zip", exdir = "./")
+    unzip ("household_power_consumption.zip", datafile)
   }
   data <- fread(datafile, na.strings = "?", sep = ";", header = T)
   ndata <- subset(data, Date %in% c("1/2/2007","2/2/2007"))
